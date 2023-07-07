@@ -3,21 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-// import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: "dark",
-//   },
-// });
+import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      {/* <ThemeProvider theme={darkTheme}> */}
-      {/* <CssBaseline /> */}
-      <App />
-      {/* </ThemeProvider> */}
-    </BrowserRouter>
+    <ChakraProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ChakraProvider>
   </React.StrictMode>
 );

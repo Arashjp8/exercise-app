@@ -1,4 +1,4 @@
-/* body {
+body {
   font-family: "Josefin Sans";
   background-color: #fffafb;
 }
@@ -53,12 +53,13 @@
 }
 
 .hero-banner-img {
-  position: absolute;
-  right: 40px;
-  top: 0px;
+  /* position: absolute;
+  right: -100%;
+  top: 15%; */
+  display: block;
   width: 700px;
   height: 900px;
-  margin-top: -330px;
+  /* margin-top: -330px; */
 }
 
 .exercise-card {
@@ -137,4 +138,4 @@
   .exercise-card {
     width: 280px;
   }
-} */
+}

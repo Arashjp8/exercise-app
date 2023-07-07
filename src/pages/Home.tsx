@@ -1,10 +1,18 @@
+import { VStack } from "@chakra-ui/react";
+import HeroBanner from "../components/HeroBanner";
+import SearchExercises from "../components/SearchExercises";
+import Exercises from "../components/Exercises";
 
 const Home = () => {
   return (
-    <div>
-      home
-    </div>
-  )
-}
+    <>
+      <VStack>
+        <HeroBanner />
+        <SearchExercises />
+        <Exercises />
+      </VStack>
+    </>
+  );
+};
 
-export default Home
+export default Home;
