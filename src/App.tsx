@@ -9,7 +9,7 @@ import ExerciseDetail from "./pages/ExerciseDetail";
 function App() {
   return (
     <>
-      <Box width={"400px"}>
+      <Box width={"400px"} sx={{ xl: "1488px" }} margin={"auto"}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
