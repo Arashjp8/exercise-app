@@ -11,8 +11,12 @@ import Banner from "../assets/images/banner.png";
 const HeroBanner = () => {
   return (
     <>
-      <HStack marginTop={"212px"} marginLeft={"50px"} padding={"20px"}>
-        <StackItem zIndex={-1} marginRight={"150%"} marginLeft={5}>
+      <HStack
+        marginTop={{ base: "100px", xl: "212px" }}
+        marginLeft={"50px"}
+        padding={"20px"}
+      >
+        <StackItem marginRight={"150%"} marginLeft={5}>
           <VStack justifyContent={"center"} alignItems={"flex-start"}>
             <Text fontWeight={"600"} fontSize={"26px"} color={"#ff2625"}>
               Fitness Club
@@ -39,6 +43,7 @@ const HeroBanner = () => {
               fontWeight={"600"}
               display={{ base: "none", xl: "block" }}
               fontSize={"170px"}
+              zIndex={-1}
             >
               Exercise
             </Text>
