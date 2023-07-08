@@ -1,4 +1,4 @@
-import { API_KEY } from "./../../apiConfig";
+// import { API_KEY } from "./../../apiConfig";
 interface exerciseOptionsProps {
   method: string;
   url?: string;
@@ -11,7 +11,7 @@ interface exerciseOptionsProps {
 export const exerciseOptions = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": API_KEY,
+    "X-RapidAPI-Key": import.meta.env.VITE_REACT_APP_API_KEY,
     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
   },
 };
