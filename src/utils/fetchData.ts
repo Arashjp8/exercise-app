@@ -1,3 +1,4 @@
+import { API_KEY } from "./../../apiConfig";
 interface exerciseOptionsProps {
   method: string;
   url?: string;
@@ -10,7 +11,7 @@ interface exerciseOptionsProps {
 export const exerciseOptions = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "29b62418f8mshdcb91040cb64a83p1855b2jsnedcf7c3704e5",
+    "X-RapidAPI-Key": API_KEY,
     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
   },
 };

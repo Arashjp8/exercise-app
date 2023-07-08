@@ -1,8 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Exercises = () => {
-  const [exercises, setExercises] = useState([]);
   useEffect(() => {}, []);
   return <Box>exercises</Box>;
 };
