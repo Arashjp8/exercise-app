@@ -8,34 +8,18 @@ import {
 } from "@chakra-ui/react";
 
 import { exerciseOptions, fetchData } from "../utils/fetchData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Exercise from "../interfaces/Exercise";
 
-interface Exercise {
-  id: number;
-  name: string;
-  gifUrl: string;
-  bodyPart: string;
-  target: string;
-  equipment: string;
+interface Props {
+  exercises: Exercise[];
+  setExercises: (value: Exercise[]) => void;
 }
 
-const SearchExercises = () => {
+const SearchExercises = ({ exercises, setExercises }: Props) => {
   const [search, setSearch] = useState("");
-  const [exercises, setExercises] = useState<Exercise[]>([]);
-  const [bodyParts, setBodyParts] = useState<string[]>([]);
 
-  useEffect(() => {
-    const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
-        exerciseOptions
-      );
-      setBodyParts(["all", ...bodyPartsData]);
-    };
-
-    fetchExercisesData();
-  }, []);
-  console.log(bodyParts);
+  console.log(exercises);
 
   const handleSearch = async () => {
     let exerciseData: Exercise[];

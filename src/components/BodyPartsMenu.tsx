@@ -1,8 +1,12 @@
 import { Menu, MenuButton, MenuList, Button } from "@chakra-ui/react";
-import BodyPartCard from "./BodyPartCard";
+import BodyPartMenuItem from "./BodyPartMenuItem";
 
-const HorizantalScrollBar = () => {
-  const exercises = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+interface Props {
+  bodyParts: string[];
+}
+
+const BodyPartsMenu = ({ bodyParts }: Props) => {
+  // const exercises = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
   return (
     <>
@@ -18,8 +22,8 @@ const HorizantalScrollBar = () => {
           Target Body Part
         </MenuButton>
         <MenuList>
-          {exercises.map((exercise) => (
-            <BodyPartCard exercise={exercise} />
+          {bodyParts.map((bodyPart) => (
+            <BodyPartMenuItem key={bodyPart} bodyPart={bodyPart} />
           ))}
         </MenuList>
       </Menu>
@@ -27,4 +31,4 @@ const HorizantalScrollBar = () => {
   );
 };
 
-export default HorizantalScrollBar;
+export default BodyPartsMenu;
