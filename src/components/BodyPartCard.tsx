@@ -1,4 +1,4 @@
-import { Image, StackItem, VStack } from "@chakra-ui/react";
+import { HStack, Image, MenuItem, StackItem, Text } from "@chakra-ui/react";
 import Gym from "../assets/icons/gym.png";
 
 interface Props {
@@ -7,27 +7,16 @@ interface Props {
 
 const BodyPartCard = ({ exercise }: Props) => {
   return (
-    <VStack
-      // margin={"0 40px"}
-      className="bodyPart-card"
-      alignItems={"center"}
-      justifyContent={"center"}
-      backgroundColor={"blackAlpha"}
-      sx={{
-        backgroundColor: "#fff",
-        border: "1px solid black",
-        borderBottomLeftRadius: "20px",
-        width: "270px",
-        height: "280px",
-        cursor: "pointer",
-        gap: "47px",
-      }}
-    >
-      <StackItem>
-        <Image src={Gym} width={"48px"} height={"48px"} />
-      </StackItem>
-      <StackItem>{exercise}</StackItem>
-    </VStack>
+    <MenuItem key={exercise} padding={5}>
+      <HStack justifyContent={"space-between"}>
+        <StackItem marginRight={5}>
+          <Image src={Gym} width={"32px"} height={"32px"} />
+        </StackItem>
+        <StackItem>
+          <Text>{exercise}</Text>
+        </StackItem>
+      </HStack>
+    </MenuItem>
   );
 };
 

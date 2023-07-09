@@ -3,14 +3,12 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  StackItem,
   Text,
   VStack,
 } from "@chakra-ui/react";
 
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import { useEffect, useState } from "react";
-import HorizantalScrollBar from "./HorizantalScrollBar";
 
 interface Exercise {
   id: number;
@@ -61,47 +59,40 @@ const SearchExercises = () => {
   };
 
   return (
-    <VStack border={"1px solid gold"}>
-      <StackItem>
-        <VStack>
-          <Text
-            textAlign={"center"}
-            fontWeight={"800"}
-            fontSize={"40px"}
-            marginTop={"100px"}
+    <VStack>
+      <Text
+        textAlign={"center"}
+        fontWeight={"800"}
+        fontSize={"40px"}
+        marginTop={"100px"}
+      >
+        Awesome Exercises <br /> You Should Know
+      </Text>
+      <InputGroup
+        marginY={10}
+        width={{ md: "400px", lg: "960px", xl: "1200px" }}
+        size={"xl"}
+      >
+        <Input
+          placeholder="Search Exercise"
+          fontSize={"xl"}
+          paddingY={4}
+          paddingX={5}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        ></Input>
+        <InputRightElement>
+          <Button
+            onClick={handleSearch}
+            paddingY={8}
+            paddingX={10}
+            colorScheme="red"
+            fontSize={"xl"}
           >
-            Awesome Exercises <br /> You Should Know
-          </Text>
-          <InputGroup
-            marginY={10}
-            width={{ md: "400px", lg: "960px", xl: "1200px" }}
-            size={"xl"}
-          >
-            <Input
-              placeholder="Search Exercise"
-              fontSize={"xl"}
-              paddingY={4}
-              paddingX={5}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            ></Input>
-            <InputRightElement>
-              <Button
-                onClick={handleSearch}
-                paddingY={8}
-                paddingX={10}
-                colorScheme="red"
-                fontSize={"xl"}
-              >
-                Search
-              </Button>
-            </InputRightElement>
-          </InputGroup>
-        </VStack>
-      </StackItem>
-      <StackItem justifyContent={"center"}>
-        <HorizantalScrollBar />
-      </StackItem>
+            Search
+          </Button>
+        </InputRightElement>
+      </InputGroup>
     </VStack>
   );
 };
