@@ -61,7 +61,7 @@ const SearchExercises = () => {
   };
 
   return (
-    <VStack>
+    <VStack border={"1px solid gold"}>
       <StackItem>
         <VStack>
           <Text
@@ -99,7 +99,7 @@ const SearchExercises = () => {
           </InputGroup>
         </VStack>
       </StackItem>
-      <StackItem>
+      <StackItem justifyContent={"center"}>
         <HorizantalScrollBar />
       </StackItem>
     </VStack>

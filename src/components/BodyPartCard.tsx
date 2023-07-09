@@ -8,13 +8,14 @@ interface Props {
 const BodyPartCard = ({ exercise }: Props) => {
   return (
     <VStack
-      padding={10}
-      margin={"0 40px"}
+      // margin={"0 40px"}
       className="bodyPart-card"
       alignItems={"center"}
       justifyContent={"center"}
+      backgroundColor={"blackAlpha"}
       sx={{
         backgroundColor: "#fff",
+        border: "1px solid black",
         borderBottomLeftRadius: "20px",
         width: "270px",
         height: "280px",
