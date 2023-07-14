@@ -12,7 +12,7 @@ const Footer = () => {
           textAlign={"center"}
           paddingBottom={"40px"}
         >
-          Arash Jafarpour's version of Gold-Gym
+          Arash Jafarpour's version of Golds-Gym
         </Text>
       </VStack>
     </Box>

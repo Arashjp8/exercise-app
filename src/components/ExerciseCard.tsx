@@ -21,6 +21,7 @@ const ExerciseCard = ({ exercise }: Props) => {
         size={"lg"}
         width={"400px"}
         height={"445px"}
+        cursor={"pointer"}
         borderTop={"4px solid #ff2625"}
         borderRadius={"none"}
         transform={"scale(1, 1)"}

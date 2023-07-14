@@ -3,10 +3,15 @@ import BodyPartMenuItem from "./BodyPartMenuItem";
 
 interface Props {
   bodyParts: string[];
+  selectedBodyPart: string;
   setSelectedBodyPart: (value: string) => void;
 }
 
-const BodyPartsMenu = ({ bodyParts, setSelectedBodyPart }: Props) => {
+const BodyPartsMenu = ({
+  bodyParts,
+  selectedBodyPart,
+  setSelectedBodyPart,
+}: Props) => {
   return (
     <>
       <Menu>
@@ -18,7 +23,7 @@ const BodyPartsMenu = ({ bodyParts, setSelectedBodyPart }: Props) => {
           colorScheme="red"
           as={Button}
         >
-          Target Body Part
+          Target Body Part: {selectedBodyPart}
         </MenuButton>
         <MenuList>
           {bodyParts.map((bodyPart) => (

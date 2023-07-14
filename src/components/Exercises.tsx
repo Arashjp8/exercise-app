@@ -50,15 +50,16 @@ const Exercises = ({ exercises, setExercises, bodyParts }: Props) => {
   }, [selectedBodyPart]);
 
   return (
-    <Box marginTop={10} width={"80%"}>
+    <Box marginTop={10} width={"80%"} id="exercises">
       <BodyPartsMenu
         bodyParts={bodyParts}
+        selectedBodyPart={selectedBodyPart}
         setSelectedBodyPart={setSelectedBodyPart}
       />
       <Text fontWeight={"800"} fontSize={"40px"} marginY={10}>
         Showing Results
       </Text>
-      <SimpleGrid columns={3} spacing={"50px"}>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={"50px"}>
         {currentExercises.map((exercise, index) => (
           <ExerciseCard key={index} exercise={exercise} />
         ))}

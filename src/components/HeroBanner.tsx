@@ -27,16 +27,18 @@ const HeroBanner = () => {
             <Text fontSize={"22px"} lineHeight={"35px"} fontFamily={"Alegreya"}>
               Check out the most effective exercises
             </Text>
-            <Button
-              variant={"solid"}
-              colorScheme="red"
-              padding={"15px 10px"}
-              marginY={"40px"}
-              cursor={"pointer"}
-              size={"lg"}
-            >
-              Explore Exercises
-            </Button>
+            <a href="#exercises">
+              <Button
+                variant={"solid"}
+                colorScheme="red"
+                padding={"15px 10px"}
+                marginY={"40px"}
+                cursor={"pointer"}
+                size={"lg"}
+              >
+                Explore Exercises
+              </Button>
+            </a>
             <Text
               color={"#ff2625"}
               opacity={"0.1"}
