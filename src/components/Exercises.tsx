@@ -25,7 +25,7 @@ const Exercises = ({ exercises, setExercises, bodyParts }: Props) => {
     indexOfLastExercise
   );
 
-  const paginate = (event: ChangeEvent<unknown>, value: number) => {
+  const paginate = (_: ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
     window.scrollTo({ top: 1000, behavior: "smooth" });
   };
