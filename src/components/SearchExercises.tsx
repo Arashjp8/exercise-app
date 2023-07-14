@@ -16,10 +16,8 @@ interface Props {
   setExercises: (value: Exercise[]) => void;
 }
 
-const SearchExercises = ({ exercises, setExercises }: Props) => {
+const SearchExercises = ({ setExercises }: Props) => {
   const [search, setSearch] = useState("");
-
-  console.log(exercises);
 
   const handleSearch = async () => {
     let exerciseData: Exercise[];
@@ -28,7 +26,6 @@ const SearchExercises = ({ exercises, setExercises }: Props) => {
         "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
-      console.log(exerciseData);
 
       const searchedExercises: Exercise[] = exerciseData.filter(
         (exercise) =>

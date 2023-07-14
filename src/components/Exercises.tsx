@@ -4,6 +4,7 @@ import BodyPartsMenu from "./BodyPartsMenu";
 import Exercise from "../interfaces/Exercise";
 import ExerciseCard from "./ExerciseCard";
 import Pagination from "@mui/material/Pagination";
+import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 interface Props {
   exercises: Exercise[];
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const Exercises = ({ exercises, setExercises, bodyParts }: Props) => {
+  const [selectedBodyPart, setSelectedBodyPart] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
 
@@ -25,19 +27,34 @@ const Exercises = ({ exercises, setExercises, bodyParts }: Props) => {
 
   const paginate = (event: ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
-
     window.scrollTo({ top: 1000, behavior: "smooth" });
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const fetchDataAsync = async () => {
+      let exerciseData: Exercise[];
+      if (selectedBodyPart === "all") {
+        exerciseData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises",
+          exerciseOptions
+        );
+      } else {
+        exerciseData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${selectedBodyPart}`,
+          exerciseOptions
+        );
+      }
+      setExercises(exerciseData);
+    };
+    fetchDataAsync();
+  }, [selectedBodyPart]);
+
   return (
-    <Box
-      // alignItems={"flex-start"}
-      marginTop={10}
-      width={"80%"}
-      border={"1px solid gold"}
-    >
-      <BodyPartsMenu bodyParts={bodyParts} />
+    <Box marginTop={10} width={"80%"}>
+      <BodyPartsMenu
+        bodyParts={bodyParts}
+        setSelectedBodyPart={setSelectedBodyPart}
+      />
       <Text fontWeight={"800"} fontSize={"40px"} marginY={10}>
         Showing Results
       </Text>

@@ -3,11 +3,10 @@ import BodyPartMenuItem from "./BodyPartMenuItem";
 
 interface Props {
   bodyParts: string[];
+  setSelectedBodyPart: (value: string) => void;
 }
 
-const BodyPartsMenu = ({ bodyParts }: Props) => {
-  // const exercises = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-
+const BodyPartsMenu = ({ bodyParts, setSelectedBodyPart }: Props) => {
   return (
     <>
       <Menu>
@@ -23,7 +22,11 @@ const BodyPartsMenu = ({ bodyParts }: Props) => {
         </MenuButton>
         <MenuList>
           {bodyParts.map((bodyPart) => (
-            <BodyPartMenuItem key={bodyPart} bodyPart={bodyPart} />
+            <BodyPartMenuItem
+              key={bodyPart}
+              bodyPart={bodyPart}
+              setSelectedBodyPart={setSelectedBodyPart}
+            />
           ))}
         </MenuList>
       </Menu>
