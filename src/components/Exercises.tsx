@@ -63,7 +63,11 @@ const Exercises = ({ exercises, setExercises, bodyParts }: Props) => {
           <ExerciseCard key={index} exercise={exercise} />
         ))}
       </SimpleGrid>
-      <HStack marginTop={10} alignItems={"center"} justifyContent={"center"}>
+      <HStack
+        marginTop={"100px"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
         {exercises.length > 9 && (
           <Pagination
             color={"secondary"}

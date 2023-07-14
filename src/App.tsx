@@ -10,12 +10,12 @@ function App() {
   return (
     <>
       <VStack
-        width={"400px"}
+        width={"100%"}
         sx={{ xl: "1488px" }}
         margin={"auto"}
         flexDirection={"column"}
       >
-        <StackItem marginLeft={{ base: "none", xl: "-260%" }} paddingX={2}>
+        <StackItem marginLeft={{ base: "none", xl: "-56%" }} paddingX={2}>
           <Navbar />
         </StackItem>
         <Routes>
